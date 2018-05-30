@@ -25,6 +25,10 @@
         - 内容略
 
 - 03 The Hero Editor
+    - toh-pt1
+        - 在线代码地址： https://stackblitz.com/angular/oaeedanakdl
+        - 内容位置： https://angular.io/tutorial/toh-pt1
+        - 内容略
     - 创建模块，简单修改
         - 创建 heroes 元素
             - ng generate component heroes
@@ -59,5 +63,7 @@
                 - 添加 <input> 的 textbox （双向绑定 binding）
                         - div 中添加代码： ``` <input [(ngModel)]="hero.name" placeholder="name"> ```
                         - [(ngModel)] 是 双向绑定的语法
-
+                - 添加 双向绑定， 就不显示了 （去掉， 就显示了）
+                    - 报错
+                        - ![image.png](https://upload-images.jianshu.io/upload_images/2800913-a70a7d308bf0b638.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
