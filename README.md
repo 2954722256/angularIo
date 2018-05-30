@@ -33,3 +33,31 @@
             - ![image.png](https://upload-images.jianshu.io/upload_images/2800913-af048738a52f53b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
         - 命令创建后 （会自动添加上 component）
             - ![image.png](https://upload-images.jianshu.io/upload_images/2800913-58b82ea1061b3ff7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+    - toh-pt01  （toh-pt1 是原始的）
+        - 注意，
+            - 对应生成代码
+            - selector: 'app-heroes'
+    - 修改代码
+        - heroes
+            - heroes.component.ts
+                - 添加属性  ```hero = 'Windstorm';```
+            - heroes.component.html
+                - 添加变量  ```{{hero}}```
+        - app
+            - src/app/app.component.html
+                - 添加 ```<app-heroes></app-heroes>```
+                - 也就是把创建的 select 添加上
+                -【可以 ng serve 看效果了】
+        - 实体类 hero.ts
+            - id, name 略
+        - heroes
+            - heroes.component.ts
+                - 修改 str 为 Hero对象
+            - heroes.component.html
+                - 修改 str 为 对象相关
+                - 可以直接在页面 uppercase（相当于 Pipes 管道 方式）
+                - 添加 <input> 的 textbox （双向绑定 binding）
+                        - div 中添加代码： ``` <input [(ngModel)]="hero.name" placeholder="name"> ```
+                        - [(ngModel)] 是 双向绑定的语法
+
+
