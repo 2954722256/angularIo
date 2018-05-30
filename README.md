@@ -34,7 +34,7 @@
         - 命令创建后 （会自动添加上 component）
             - ![image.png](https://upload-images.jianshu.io/upload_images/2800913-58b82ea1061b3ff7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
     - toh-pt01  （toh-pt1 是原始的）
-        - 注意，
+        - 注意
             - 对应生成代码
             - selector: 'app-heroes'
     - 修改代码
