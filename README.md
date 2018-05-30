@@ -26,4 +26,10 @@
 
 - 03 The Hero Editor
     - 创建模块，简单修改
-        -
+        - 创建 heroes 元素
+            - ng generate component heroes
+            - ![image.png](https://upload-images.jianshu.io/upload_images/2800913-ae630c86e37e8e7f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+        - 创建前
+            - ![image.png](https://upload-images.jianshu.io/upload_images/2800913-af048738a52f53b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+        - 命令创建后 （会自动添加上 component）
+            - ![image.png](https://upload-images.jianshu.io/upload_images/2800913-58b82ea1061b3ff7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
