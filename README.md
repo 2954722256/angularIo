@@ -110,9 +110,22 @@
         - 内容略
     - 命令 生成 hero-detail 的 component元素
         - ng generate component hero-detail
-    写 hero-detail.component 的代码
+    - 后面目的
+        - 把 在 heroes.component 具体显示 detail 的 页面， 提取出来
+        - html中，
+            - 用 ``` <app-hero-detail [hero]="selectedHero"></app-hero-detail> ``` 代替
+            - 在  hero-detail 中，
+                - ts的 @Component中， ``` selector: 'app-hero-detail' ```
+                - 再直接引用
+    - 写 hero-detail.component 的代码
         - html
             - ``` [(ngModel)] ``` ， 添加 detail 的页面
         - ts
             - 引入 Hero 的 bean
-            - 添加 ``` @Input() ```
+            - 添加 ``` @Input() ``` 绑定
+                - 来源：
+                    - 在 hero 的 html 中， `` <app-hero-detail [hero]="selectedHero"></app-hero-detail> ```
+                - 插入：
+                    - HeroDetail 的 Component 的 ``` @Input() hero: Hero ```
+            - 注意
+                - @Input 需要import Input的 类， 在
