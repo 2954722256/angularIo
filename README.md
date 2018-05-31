@@ -276,4 +276,30 @@
             - 在 AppRoutingModule 中， 添加路由
                 - 到 dashboard 的路由
                 - '' 转跳到 dashboard
-            -
+    - 添加 HeroDetails 的 路由
+        - 有3个位置 可以到 details
+            - dashboard
+            - heroes的list
+            - ？？？
+        - 添加 路由
+            - 在 app-routing.module.ts 添加 路由
+                - ``` { path: 'detail/:id', component: HeroDetailComponent }, ```
+        - 添加跳转（跳入）
+            - dashboard页面， 添加跳转
+                - a标签里面添加，  ``` routerLink="/detail/{{hero.id}} ```
+            - HeroesComponent 添加 跳转
+                - 原来用 selectedHero 表示点击， 现在直接跳转
+                    - li 的 for 循环 里面， 添加 a 标签
+                    - 去掉对应的 selectedHero 相关的代码
+                        -
+        - 写 getHero()
+            - 导入 库
+                - ActivatedRoute
+                    - 从 路由 获取 id
+                - HeroService
+                    - 获取 Hero 相关数据
+                - Location
+                    - 用于 页面返回
+            - 实现对应的方法
+                - 获取id 的Hero数据
+                - 返回

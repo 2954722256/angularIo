@@ -4,7 +4,6 @@ import {Hero} from "./bean/hero";
 import {of} from "rxjs/internal/observable/of";
 import {Observable} from "rxjs/internal/Observable";
 import {MessageService} from "./message.service";
-import {log} from "util";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +13,7 @@ export class HeroService {
   constructor(private messageService: MessageService) { }
 
     ngOnInit() {
-        this.getHeroes();
+        // this.getHeroes()
     }
 
 
@@ -51,6 +50,14 @@ export class HeroService {
         // console.log('contact by edited id is';
         this.messageService.add('HeroService: fetched heroes' + ' 触发 MessageService ');
         return of(HEROES);
+    }
+
+
+    // HeroDetails 的 Component 使用 （暂时从 mock的数据里面拿）
+    getHero(id: number): Observable<Hero> {
+        // TODO: send the message _after_ fetching the hero
+        this.messageService.add(`HeroService: fetched hero id=${id}`);
+        return of(HEROES.find(hero => hero.id === id));
     }
 
 }
