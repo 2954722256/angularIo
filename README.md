@@ -230,7 +230,7 @@
         - 点击名字， 导航到 detail view
         - 大体 样子
             - ![](https://angular.io/generated/images/guide/toh/nav-diagram.png)
-    - 导航
+    - 导航相关类
         - 生成 appRouting 的 Module 模块
             - ``` ng generate module app-routing --flat --module=app ```
             - 参数说明
@@ -253,13 +253,16 @@
             - 添加 Routes 路由 值
                 - Routes 是数组， 对象 需要有 path， component
                     - 例如： ``` { path: 'heroes', component: HeroesComponent } ```
-        - 添加 RouterOutlet
-            -（自己理解）
-                - 就是 页面的 路由标签
-            - app.component.html
-                - 之前是 标题， ```<app-heroes></app-heroes>```
-                    也就是 标题 和 HeroesComponent
-                - 修改为 ``` <router-outlet></router-outlet> ```
-                - 并且添加一个 Heroes 字符的 导航
-
+    - 添加 RouterOutlet
+        -（自己理解）
+            - 就是 页面的 路由标签
+        - app.component.html
+            - 之前是 标题， ```<app-heroes></app-heroes>```
+                也就是 标题 和 HeroesComponent
+            - 修改为 ``` <router-outlet></router-outlet> ```
+            - 并且添加一个 Heroes （路由里面配置的， /heroes）， 根目录 字符的 导航（根目录）
+    - 添加 dashboard 页面
+        - 命令生成 component
+            - ``` ng generate component dashboard ```
+        -
 

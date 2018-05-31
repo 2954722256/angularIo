@@ -4,6 +4,7 @@ import {Hero} from "./bean/hero";
 import {of} from "rxjs/internal/observable/of";
 import {Observable} from "rxjs/internal/Observable";
 import {MessageService} from "./message.service";
+import {log} from "util";
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +19,9 @@ export class HeroService {
 
 
 
-  getFakeHeroes(): Hero[] {
-      return HEROES;
-  }
+  // getFakeHeroes(): Hero[] {
+  //     return HEROES;
+  // }
 
   // heroes: Hero[];
   // getHeroes(): void {
@@ -42,11 +43,13 @@ export class HeroService {
     //     this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
     // }
 
+    num = 0;
 
     // 通过 MessageService 获取 数据 （链式， 当 MessageService 添加数据的时候， 这边会也增加数据 ）
     getHeroes(): Observable<Hero[]> {
         // TODO: send the message _after_ fetching the heroes
-        this.messageService.add('HeroService: fetched heroes');
+        // console.log('contact by edited id is';
+        this.messageService.add('HeroService: fetched heroes' + (this.num+1));
         return of(HEROES);
     }
 
