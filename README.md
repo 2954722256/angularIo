@@ -264,5 +264,9 @@
     - 添加 dashboard 页面
         - 命令生成 component
             - ``` ng generate component dashboard ```
-        -
+        - 简单修改
+            - html
+                - 4个格子
+                - 对应的名字
+
 
