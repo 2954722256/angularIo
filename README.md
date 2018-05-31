@@ -245,7 +245,8 @@
                     - declarations : []
             - 删除 CommonModule 和 declarations
             - 添加 ``` imports: [ RouterModule.forRoot(routes) ], ```
-                - 来的路由 ， 也按 RouterModule 的规则
+                - 来的路由 （可以显示哪一些路由）
+                - 【不添加， 不会显示】
         - 修改 app-routing.module.ts
             - @NgModule 用  RouterModule 导航
                 - exports: [ RouterModule ]
@@ -258,5 +259,7 @@
             - app.component.html
                 - 之前是 标题， ```<app-heroes></app-heroes>```
                     也就是 标题 和 HeroesComponent
-                修改为
+                - 修改为 ``` <router-outlet></router-outlet> ```
+                - 并且添加一个 Heroes 字符的 导航
+
 
