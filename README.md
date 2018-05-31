@@ -230,8 +230,10 @@
         - 点击名字， 导航到 detail view
         - 大体 样子
             - ![](https://angular.io/generated/images/guide/toh/nav-diagram.png)
-
-
+    - 导航
+        - 生成 appRouting 的 Module 模块
+            - ``` ng generate module app-routing --flat --module=app ```
+        
 
 
 
