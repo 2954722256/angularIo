@@ -133,7 +133,7 @@
         - 虽然 和之前代码一样
         - 但是， 解耦了
 
-- 04 Services
+- 06 Services
     - toh-pt4
         - 在线代码地址： https://stackblitz.com/angular/nkqdbpnjxav
         - 内容位置： https://angular.io/tutorial/toh-pt4
@@ -212,5 +212,30 @@
             - 注意： 要是 public的， 在 html 中调用
         - 修改html
             - 修改内容，添加 MessageService 内容的 for 循环
+    - 大体 依赖
+        - MessageService 被依赖
+        - ``` MessagesComponent -> MessageService ```
+        - ``` HeroService -> MessageService ```
+        - ``` HeroesComponent -> HeroService -> MessageService ```
+
+
+- 07 Routing
+    - toh-pt5
+        - 在线代码地址： https://stackblitz.com/angular/mkpmenymdve
+        - 内容位置： https://angular.io/tutorial/toh-pt5
+        - 内容略
+    - 大体
+        - 添加一个 Dashboard  view
+        - 在 Heroes 和 Dashboard 之间， 添加 导航
+        - 点击名字， 导航到 detail view
+        - 大体 样子
+            - ![](https://angular.io/generated/images/guide/toh/nav-diagram.png)
+
+
+
+
+
+
+
 
 
