@@ -108,3 +108,5 @@
         - 在线代码地址： https://stackblitz.com/angular/onrnyygnmqd
         - 内容位置： https://angular.io/tutorial/toh-pt3
         - 内容略
+    - 命令 生成 hero-detail 的 component元素
+        - ng generate component hero-detail
