@@ -49,7 +49,7 @@ export class HeroService {
     getHeroes(): Observable<Hero[]> {
         // TODO: send the message _after_ fetching the heroes
         // console.log('contact by edited id is';
-        this.messageService.add('HeroService: fetched heroes' + (this.num+1));
+        this.messageService.add('HeroService: fetched heroes' + ' 触发 MessageService ');
         return of(HEROES);
     }
 

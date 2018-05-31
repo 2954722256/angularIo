@@ -268,5 +268,12 @@
             - html
                 - 4个格子
                 - 对应的名字
-
-
+            - component
+                - 用 HeroesService 的数据
+                - 显示 index （1，5 ）的内容
+            - css 略
+        - 添加对应的路由
+            - 在 AppRoutingModule 中， 添加路由
+                - 到 dashboard 的路由
+                - '' 转跳到 dashboard
+            -
