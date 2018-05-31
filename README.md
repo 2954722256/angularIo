@@ -128,4 +128,24 @@
                 - 插入：
                     - HeroDetail 的 Component 的 ``` @Input() hero: Hero ```
             - 注意
-                - @Input 需要import Input的 类， 在
+                - @Input 需要import Input的 类
+    - 总结
+        - 虽然 和之前代码一样
+        - 但是， 解耦了
+
+- 04 Services
+    - toh-pt4
+        - 在线代码地址： https://stackblitz.com/angular/nkqdbpnjxav
+        - 内容位置： https://angular.io/tutorial/toh-pt4
+        - 内容略
+    - 目的
+        - 这里， 我们的数据， 是从假数据里面来的
+        - Service 是用来提供数据的
+        - 通过 Inject 插入 数据 （DI）
+        - 这里， 我们写一个 假Service
+    - 内容（新）
+        - 需要2个 Service
+            - MessageService
+                - MessagesComponent 展现数据
+            - HeroService
+                - 也需要依赖 MessageService， 用来 send Message
