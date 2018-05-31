@@ -198,6 +198,13 @@
         - getHeroes() 方法
             - 直接 给 属性 赋值为 ``` heroService.getHeroes() ```
         - 在 ngOnInit() 中， 调用 getHeroes() 方法
-    - 把 HeroService 修改为 Observable 类型
-        -
+    - MessagesComponent
+        - 命令生成
+            - ``` ng generate component messages ```
+        - 修改html
+            - 修改内容， 有 变量
+    - MessageService
+        - 生成
+            - ``` ng generate service message ```
+
 
