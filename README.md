@@ -60,10 +60,27 @@
             - heroes.component.html
                 - 修改 str 为 对象相关
                 - 可以直接在页面 uppercase（相当于 Pipes 管道 方式）
-                - 添加 <input> 的 textbox （双向绑定 binding）
-                        - div 中添加代码： ``` <input [(ngModel)]="hero.name" placeholder="name"> ```
-                        - [(ngModel)] 是 双向绑定的语法
+                - 添加 ```<input>  的 textbox ```（双向绑定 binding）
+                    - div 中添加代码： ``` <input [(ngModel)]="hero.name" placeholder="name">  ```
+                    - ``` [(ngModel)] ``` 是 双向绑定的语法
                 - 添加 双向绑定， 就不显示了 （去掉， 就显示了）
                     - 报错
                         - ![image.png](https://upload-images.jianshu.io/upload_images/2800913-a70a7d308bf0b638.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+     - 理解
+        - ``` [(ngModel)]  ``` 不识别 属性 ``` input ```
+            - 需要 FormsModule 模块
+        - metadata
+            - angular就需要知道 这些 文件， 库， 怎么连接在一起。  就是 metadata
+            - 在 component 中，
+                - 有一些用 @Component
+                - 其他特殊的， @NgModule
+            - 一般重要的 @NgModule 在 最上层的 AppModule类中 声明
+    - 代码
+        - 在 app/app.module.ts 中 添加 FormsModule 依赖
+            - imports 数组中， 添加 FormsModule， 引入包， 即可
+
+
+
+
+
 
