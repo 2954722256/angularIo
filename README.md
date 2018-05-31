@@ -152,4 +152,52 @@
     - 生成
         - hero 的 service
             - ng generate service hero
+            - service没有在任何文件夹里面，只是在 根目录
+    - 理解
+        - @Injectable()   （生成 hero.service 的 ）
+            - @Injectable 也是 metadata
+            - 给 Service提供数据
+        - Service
+            - 可以从各种地方获取数据
+                - web service
+                - local storage
+                - mock data （假数据）
+            - 这里没有后台，暂时都用假数据 （做中间存储，可以看出删除效果）
+        - providedIn （Service 的 @Injectable 中）
+            - 值 是 root
+                - ``` providedIn: 'root' ``` 是 cli 生成的
+                    - 没有指定， 就是 root
+                - root 可以 inject 到 任意的地方 （ 只要想找它获取 ）
+            - 如果想只给某个 module 提供数据
+                - 可以给
+                    - in the HeroesComponent
+                    - in the AppComponent
+                    - in the AppModule
+                - 后面 添加 ``` --module=app ``` 即可
+            - 指定 module
+                - 指定 module 的 生成 命令为：
+                    - ``` ng generate service hero --module=app ```
+        - ngOnInit()
+            - 对应 Component元素， 初始化
+        - Observable data
+            - 同步（synchronously）， 异步（asynchronously） 理解
+                - 直接获取： 是 同步
+                - 用 Observable 是 异步
+            - 同步 例子：
+                - HeroService.getHeroes() 类似
+                - 返回类型 ``` Hero[] ```
+            - 异步 例子：
+                - 一般 可以用 Promise 表示一个 要返回的
+                    - 返回的是 Observable
+                    - （通过 callback 返回）
+                - 返回类型 ``` Observable<Hero[]> ```
+    - 更新 HeroesComponent
+        - 给 HeroesComponent 添加 Service
+            - 构造 添加 参数
+                - ``` constructor(private heroService: HeroService) { } ```
+        - getHeroes() 方法
+            - 直接 给 属性 赋值为 ``` heroService.getHeroes() ```
+        - 在 ngOnInit() 中， 调用 getHeroes() 方法
+    - 把 HeroService 修改为 Observable 类型
         -
+
