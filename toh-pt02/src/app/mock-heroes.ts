@@ -1,4 +1,5 @@
-import { Hero } from './hero';
+import {Hero} from "./bean/hero";
+
 
 export const HEROES: Hero[] = [
     { id: 11, name: 'Mr. Nice' },

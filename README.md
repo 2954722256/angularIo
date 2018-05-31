@@ -87,6 +87,7 @@
     - 数据（假数据）
         - mock-heroes.ts
             - 假数组 数据
-
+    - 显示数据
+        - heroes.component.ts 中 显示数据
 
 
