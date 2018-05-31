@@ -110,3 +110,9 @@
         - 内容略
     - 命令 生成 hero-detail 的 component元素
         - ng generate component hero-detail
+    写 hero-detail.component 的代码
+        - html
+            - ``` [(ngModel)] ``` ， 添加 detail 的页面
+        - ts
+            - 引入 Hero 的 bean
+            - 添加 ``` @Input() ```
