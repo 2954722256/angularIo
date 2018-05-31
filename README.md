@@ -79,8 +79,14 @@
         - 在 app/app.module.ts 中 添加 FormsModule 依赖
             - imports 数组中， 添加 FormsModule， 引入包， 即可
 
-
-
+- 04 Display a Heroes List
+    - toh-pt2
+        - 在线代码地址： https://stackblitz.com/angular/aqbympajoll
+        - 内容位置： https://angular.io/tutorial/toh-pt2
+        - 内容略
+    - 数据（假数据）
+        - mock-heroes.ts
+            - 假数组 数据
 
 
 
