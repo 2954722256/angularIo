@@ -156,7 +156,7 @@
     - 理解
         - @Injectable()   （生成 hero.service 的 ）
             - @Injectable 也是 metadata
-            - 给 Service提供数据
+            - 给 Service 提供数据
         - Service
             - 可以从各种地方获取数据
                 - web service
@@ -198,13 +198,19 @@
         - getHeroes() 方法
             - 直接 给 属性 赋值为 ``` heroService.getHeroes() ```
         - 在 ngOnInit() 中， 调用 getHeroes() 方法
-    - MessagesComponent
-        - 命令生成
-            - ``` ng generate component messages ```
-        - 修改html
-            - 修改内容， 有 变量
     - MessageService
         - 生成
             - ``` ng generate service message ```
+        - 属性，方法
+            - ``` messages: string[] = []; ```
+            - ``` add(message: string) ```
+    - MessagesComponent
+        - 命令生成
+            - ``` ng generate component messages ```
+        - Component 构造
+            - 构造 添加变量 MessageService
+            - 注意： 要是 public的， 在 html 中调用
+        - 修改html
+            - 修改内容，添加 MessageService 内容的 for 循环
 
 
