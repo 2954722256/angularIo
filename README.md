@@ -233,11 +233,30 @@
     - 导航
         - 生成 appRouting 的 Module 模块
             - ``` ng generate module app-routing --flat --module=app ```
-        
-
-
-
-
-
-
+            - 参数说明
+                - ``` --flag```
+                    - 放置在 app目录， 不创建自己的目录
+                - ``` --module=app```
+                    - 自动 在 app.module.ts 中 的 imports 数组中注册
+        - 理解 app-routing.module.ts
+            - 默认生成
+                - 有 @NgModule
+                    - import ： CommonModule
+                    - declarations : []
+            - 删除 CommonModule 和 declarations
+            - 添加 ``` imports: [ RouterModule.forRoot(routes) ], ```
+                - 来的路由 ， 也按 RouterModule 的规则
+        - 修改 app-routing.module.ts
+            - @NgModule 用  RouterModule 导航
+                - exports: [ RouterModule ]
+            - 添加 Routes 路由 值
+                - Routes 是数组， 对象 需要有 path， component
+                    - 例如： ``` { path: 'heroes', component: HeroesComponent } ```
+        - 添加 RouterOutlet
+            -（自己理解）
+                - 就是 页面的 路由标签
+            - app.component.html
+                - 之前是 标题， ```<app-heroes></app-heroes>```
+                    也就是 标题 和 HeroesComponent
+                修改为
 
