@@ -149,3 +149,7 @@
                 - MessagesComponent 展现数据
             - HeroService
                 - 也需要依赖 MessageService， 用来 send Message
+    - 生成
+        - hero 的 service
+            - ng generate service hero
+        -
