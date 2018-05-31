@@ -88,6 +88,23 @@
         - mock-heroes.ts
             - 假数组 数据
     - 显示数据
-        - heroes.component.ts 中 显示数据
+        - heroes.component
+            - .ts 中 显示数据
+                - 引入 假数据
+                - 对象， 选中 哪个对象
+            - html
+                - 分为 2 块
+                    - for循环， 所有数据
+                    - 如果是 selected 的， 显示对应的数据
+                - 注意
+                    - selectedHero 可能为 null
+                    - 需要提前判断一下：
+                        - ``` <div *ngIf="selectedHero"> ```
+            - css
+                - .heroes .badge 单独写效果
 
-
+- 05 Master/Detail Components
+    - toh-pt3
+        - 在线代码地址： https://stackblitz.com/angular/onrnyygnmqd
+        - 内容位置： https://angular.io/tutorial/toh-pt3
+        - 内容略
