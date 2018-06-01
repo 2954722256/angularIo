@@ -1,48 +1,28 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HEROES} from "./mock-heroes";
 import {Hero} from "./bean/hero";
 import {of} from "rxjs/internal/observable/of";
 import {Observable} from "rxjs/internal/Observable";
 import {MessageService} from "./message.service";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class HeroService {
 
-  constructor(private messageService: MessageService) { }
+    private heroesUrl = 'api/heroes';  // URL to web api
+
+    constructor(
+        private http: HttpClient,
+        private messageService: MessageService
+    ) {
+    }
 
     ngOnInit() {
         // this.getHeroes()
     }
 
-
-
-  // getFakeHeroes(): Hero[] {
-  //     return HEROES;
-  // }
-
-  // heroes: Hero[];
-  // getHeroes(): void {
-  //     this.heroes = this.heroService.getHeroes();
-  // }
-
-
-
-     // Observable 方式 返回， Hero数组的数据
-    // getHeroes(): Observable<Hero[]> {
-    //     return of(HEROES);
-    //
-    // }
-
-
-
-    //
-    // getHeroes(): void {
-    //     this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
-    // }
-
-    num = 0;
 
     // 通过 MessageService 获取 数据 （链式， 当 MessageService 添加数据的时候， 这边会也增加数据 ）
     getHeroes(): Observable<Hero[]> {
@@ -58,6 +38,11 @@ export class HeroService {
         // TODO: send the message _after_ fetching the hero
         this.messageService.add(`HeroService: fetched hero id=${id}`);
         return of(HEROES.find(hero => hero.id === id));
+    }
+
+    /** Log a HeroService message with the MessageService */
+    private log(message: string) {
+        this.messageService.add('HeroService: ' + message);
     }
 
 }

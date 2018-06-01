@@ -339,3 +339,9 @@
                 - 实现 implements InMemoryDbService 接口
                 - 写对应的 数据
                 - 之后 api好了以后， 可以直接替换成真是api即可
+    - Hero相关 添加 Http
+        - service 添加 http
+            - constructor 中 添加  private http: HttpClient
+            - 用 messageService 添加 log（str） 方法
+            - 添加 属性， heroesUrl
+        - service
