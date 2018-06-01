@@ -373,4 +373,19 @@
                 - 添加 save 按钮
             - component
                 - 写 save 方法， 调用 HeroService的方法
-
+        - heroes （列表页）
+            - html
+                - 列表上方， 添加 input 和 add按钮
+                - 用于 实现 添加操作
+            - component
+                - 用 service 实现 add 操作
+            - html
+                - 列表的item后面， 添加 删除按钮
+            - component
+                - 用 service 实现 delete 操作
+    - dashboard 页面
+        - html
+            - 添加 <app-hero-search></app-hero-search> 占位
+        - 生成 search 页面
+            - 生成 component
+                - ```  ```
