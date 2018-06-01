@@ -388,4 +388,32 @@
             - 添加 <app-hero-search></app-hero-search> 占位
         - 生成 search 页面
             - 生成 component
-                - ```  ```
+                - ``` ng generate component hero-search ```
+            - html 和 css（略）
+                - 有对应的 input
+                - input 可以异步显示 对象
+                - 搜索 异步， 列表item ，可以点击 route 到 /detail/{hero.id}
+        - asyncPip 实现
+            - 页面
+                - 之前是 ``` <li *ngFor="let hero of heroes" > ```
+                - 现在是 ``` <li *ngFor="let hero of heroes$ | async" > ```
+                    - heroes$ 简单表示， 这是一个 Observable， 不是 数组
+                - 理解： ``` | ``` 是 pipe管道 （和 linux差不多 ）
+            - component实现
+                - 属性 heroes$ （Observable<Hero[]>）
+                    - heroes$ 简单表示， 这是一个 Observable， 不是 数组
+                - 属性 searchTerms （ Subject<string> )
+                - push（str） 方法
+                    - 用 Subject 的 next  （流， 主题， push）
+                - 初始化方法
+                    - 初始化 （有点复杂， 暂时略）
+            - 页面 到 component
+                - Subject 说明
+                    - 对应的主题， 在 Observale 和 Observable源之间
+                    - 只要 subscribe 了 Subject， 有对应的源， 就可以收到 东西
+                - Rx 的 Chaining 调用
+                    - component说明
+                        - ``` debounceTime(300) ``` 等300ms，一次心跳
+                        - ``` distinctUntilChanged() ``` 改变后，再心跳
+                        - ``` switchMap() ``` 实现内容，只返回最新的， 丢掉之前的
+                - 在浏览器 测试
