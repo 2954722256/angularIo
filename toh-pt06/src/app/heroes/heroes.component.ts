@@ -47,5 +47,15 @@ export class HeroesComponent implements OnInit {
             });
     }
 
+    delete(hero : Hero){
+        if (!hero) {
+            return;
+        }
+        this.heroes = this.heroes.filter(h => h !== hero);// filter（h=>） 处理 callback
+        this.heroService.deleteHero(hero.id).subscribe();
+
+    }
+
+
 
 }

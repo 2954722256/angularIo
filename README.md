@@ -416,4 +416,6 @@
                         - ``` debounceTime(300) ``` 等300ms，一次心跳
                         - ``` distinctUntilChanged() ``` 改变后，再心跳
                         - ``` switchMap() ``` 实现内容，只返回最新的， 丢掉之前的
-                - 在浏览器 测试
+                - 在浏览器 测试dashboard 的 搜索效果
+                    - 很好用， css 需要修改
+
