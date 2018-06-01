@@ -345,3 +345,10 @@
             - 用 messageService 添加 log（str） 方法
             - 添加 属性， heroesUrl
         - service
+            - getHeroes(): Observable<Hero[]>
+                - 原来是 直接从 数组中获取
+                - 现在 修改为： this.http.get
+            - Error handling
+                - 在 getHeroes(): Observable<Hero[]> 里面
+                - 如果 有error， 可以直接 .pipe( catchError )
+
