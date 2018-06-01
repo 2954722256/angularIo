@@ -75,6 +75,8 @@ export class HeroService {
 
     /** DELETE: delete the hero from the server */
     deleteHero (hero: Hero | number): Observable<Hero> {
+        // typeof hero === 'number' ?
+        // 三目，  为了， 可以 适配 id  和 hero 的传递
         const id = typeof hero === 'number' ? hero : hero.id;
         const url = `${this.heroesUrl}/${id}`;
 

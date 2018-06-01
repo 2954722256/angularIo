@@ -255,7 +255,8 @@
                     - 例如： ``` { path: 'heroes', component: HeroesComponent } ```
     - 添加 RouterOutlet
         -（自己理解）
-            - 就是 页面的 路由标签
+            - 就是 页面的 路由标签 （占位符）
+            - 也就是 【在哪里】 显示 routed views
         - app.component.html
             - 之前是 标题， ```<app-heroes></app-heroes>```
                 也就是 标题 和 HeroesComponent
@@ -419,3 +420,106 @@
                 - 在浏览器 测试dashboard 的 搜索效果
                     - 很好用， css 需要修改
 
+
+---
+#### 页面结构
+    - 总
+        - 说明
+            - 头， 导航， 底部信息固定 ```<router-outlet>```
+            - 中间 为 <router-outlet>占位符， 最外层的router路由
+                - 路由， 默认为： /dashboard
+        - 代码
+            ```
+                <h1>{{title}}</h1>
+                <nav>
+                  <a routerLink="/dashboard">Dashboard</a>
+                  <a routerLink="/heroes">Heroes</a>
+                </nav>
+                <router-outlet></router-outlet>
+                <app-messages></app-messages>
+            ```
+    - app-dashboard（dashboard）【routerGo】
+        - 说明
+            - 可以 --> detail
+            - 有 <app-hero-search> 占位
+        - 代码
+            ```
+                <h3>Top Heroes</h3>
+                <div class="grid grid-pad">
+                  <a *ngFor="let hero of heroes" class="col-1-4"
+                      routerLink="/detail/{{hero.id}}">
+                    <div class="module hero">
+                      <h4>{{hero.name}}</h4>
+                    </div>
+                  </a>
+                </div>
+
+                <app-hero-search></app-hero-search>
+            ```
+    - app-heroes（heroes）【routerGo】
+        - 说明
+            - 列表
+            - 可以 --> detail
+            - 功能
+                - add
+                - delete
+        - 代码
+            ```<h2>My Heroes</h2>
+
+               <div>
+                 <label>Hero name:
+                   <input #heroName />
+                 </label>
+                 <!-- (click) passes input value to add() and then clears the input -->
+                 <button (click)="add(heroName.value); heroName.value=''">
+                   add
+                 </button>
+               </div>
+
+               <ul class="heroes">
+                 <li *ngFor="let hero of heroes">
+                   <a routerLink="/detail/{{hero.id}}">
+                     <span class="badge">{{hero.id}}</span> {{hero.name}}
+                   </a>
+                   <button class="delete" title="delete hero"
+                   (click)="delete(hero)">x</button>
+                 </li>
+               </ul>
+
+            ```
+    - app-hero-search （hero-search）【dashboard 占位】
+        - 说明
+            - 可以 --> detail
+        - 代码
+            ```
+                <div id="search-component">
+                  <h4>Hero Search</h4>
+
+                  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+
+                  <ul class="search-result">
+                    <li *ngFor="let hero of heroes$ | async" >
+                      <a routerLink="/detail/{{hero.id}}">
+                        {{hero.name}}
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+            ```
+    - app-hero-detail (hero-detail)【routerGo】
+        - 说明
+            - 显示， 修改， 保存
+        - 代码
+            ```
+                <div *ngIf="hero">
+                  <h2>{{ hero.name | uppercase }} Details</h2>
+                  <div><span>id: </span>{{hero.id}}</div>
+                  <div>
+                    <label>name:
+                      <input [(ngModel)]="hero.name" placeholder="name"/>
+                    </label>
+                  </div>
+                  <button (click)="goBack()">go back</button>
+                  <button (click)="save()">save</button>
+                </div>
+            ```
