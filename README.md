@@ -344,11 +344,33 @@
             - constructor 中 添加  private http: HttpClient
             - 用 messageService 添加 log（str） 方法
             - 添加 属性， heroesUrl
-        - service
+        - service 之前方法 修改为 http形式
             - getHeroes(): Observable<Hero[]>
                 - 原来是 直接从 数组中获取
                 - 现在 修改为： this.http.get
             - Error handling
                 - 在 getHeroes(): Observable<Hero[]> 里面
                 - 如果 有error， 可以直接 .pipe( catchError )
+            - getHero(id)
+                - 把之前 数组取
+                - 修改为： this.http.get
+        - 添加 header 定义格式（httpOptions对象， 约定格式）
+            - 除了get ， 其他需要告诉服务器， 是json的格式
+            - 添加对象
+                ```
+                    const httpOptions = {
+                      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+                    };
+                ```
+        - service 新增方法
+            - updateHero (hero: Hero)
+            - addHero (hero: Hero)
+            - delete(hero: Hero)
+            - searchHeroes(term: string)
+    - hero页面
+        - hero-detail
+            - http页面
+                - 添加 save 按钮
+            - component
+                - 写 save 方法， 调用 HeroService的方法
 
