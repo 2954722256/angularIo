@@ -1,0 +1,22 @@
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <!--这里， 对应的 class.selected 是否为 true， 取决于 ts 里面的属性 -->
+  <!--<li *ngFor="let hero of heroes"-->
+      <!--[class.selected]="hero === selectedHero"-->
+      <!--(click)="onSelect(hero)">-->
+    <!--<span class="badge">{{hero.id}}</span> {{hero.name}}-->
+  <!--</li>-->
+
+
+  <!-- 原来用 selectedHero表示点击， 现在直接跳转 -->
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+  </li>
+
+
+</ul>
+
+<!-- selectedHero, 也要去掉 app-hero-detail 的 @Input -->
+<!--<app-hero-detail [hero]="selectedHero"></app-hero-detail>-->

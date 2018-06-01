@@ -303,3 +303,10 @@
             - 实现对应的方法
                 - 获取id 的Hero数据
                 - 返回
+
+- 08 Routing
+    - toh-pt6
+        - 在线代码地址： https://stackblitz.com/angular/xkyalvboyrj
+        - 内容位置： https://angular.io/tutorial/toh-pt6
+        - 内容略
+    -
