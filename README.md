@@ -291,7 +291,6 @@
                 - 原来用 selectedHero 表示点击， 现在直接跳转
                     - li 的 for 循环 里面， 添加 a 标签
                     - 去掉对应的 selectedHero 相关的代码
-                        -
         - 写 getHero()
             - 导入 库
                 - ActivatedRoute
@@ -309,4 +308,34 @@
         - 在线代码地址： https://stackblitz.com/angular/xkyalvboyrj
         - 内容位置： https://angular.io/tutorial/toh-pt6
         - 内容略
-    -
+    - 大体
+        - 给 HeroService 对应的 http 请求
+        - 可以对 hero 进行， 增删改查 操作
+        - 可以 通过名字 搜索 hero
+    - 添加 http Module
+        - open the root AppModule,
+        - import the HttpClientModule symbol from @angular/common/http,
+        - add it to the @NgModule.imports array.
+    - 添加 虚拟数据Server （Simulate a data server）
+        - 大致内容
+            - 虚拟的服务，拦截请求，通过 内存数据， 返回 虚拟的响应
+            - 不需要真正的服务， 学习 HttpClient
+            - 前期也可以在api出问题的时候， 写前端的代码
+        - 过程
+            - npm 安装 （In-memory Web API package）
+                - npm install angular-in-memory-web-api --save
+            - app.module
+                - imports 数组中
+                    - HttpClientInMemoryWebApiModule ,InMemoryDataService
+                        ```
+                            HttpClientModule,
+
+                            HttpClientInMemoryWebApiModule.forRoot(
+                              InMemoryDataService, { dataEncapsulation: false }
+                            )
+                        ```
+            - InMemoryDataService 导入数据
+                - 这个就是 在 imports 中的 InMemoryDataService
+                - 实现 implements InMemoryDbService 接口
+                - 写对应的 数据
+                - 之后 api好了以后， 可以直接替换成真是api即可
