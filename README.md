@@ -161,7 +161,7 @@
             - 可以从各种地方获取数据
                 - web service
                 - local storage
-                - mock data （假数据）
+                - mock service （假数据）
             - 这里没有后台，暂时都用假数据 （做中间存储，可以看出删除效果）
         - providedIn （Service 的 @Injectable 中）
             - 值 是 root
@@ -179,7 +179,7 @@
                     - ``` ng generate service hero --module=app ```
         - ngOnInit()
             - 对应 Component元素， 初始化
-        - Observable data
+        - Observable service
             - 同步（synchronously）， 异步（asynchronously） 理解
                 - 直接获取： 是 同步
                 - 用 Observable 是 异步
@@ -317,7 +317,7 @@
         - open the root AppModule,
         - import the HttpClientModule symbol from @angular/common/http,
         - add it to the @NgModule.imports array.
-    - 添加 虚拟数据Server （Simulate a data server）
+    - 添加 虚拟数据Server （Simulate a service server）
         - 大致内容
             - 虚拟的服务，拦截请求，通过 内存数据， 返回 虚拟的响应
             - 不需要真正的服务， 学习 HttpClient
