@@ -7,7 +7,6 @@ import {HttpClientModule} from "@angular/common/http";
 import {InMemoryDataService} from "./service/in-memory-data.service";
 import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
 import { HeroesComponent } from './heroes/heroes.component';
-import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -17,7 +16,6 @@ import {FormsModule} from "@angular/forms";
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpClientModule,
 
     // The HttpClientInMemory
